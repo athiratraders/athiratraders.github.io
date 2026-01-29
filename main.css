@@ -2,6 +2,9 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+* {
+    box-sizing: border-box;
+}
 
 html,
 body,
@@ -135,9 +138,15 @@ table {
 }
 
 /*athiratraders styles*/
+body {
+    position: relative;
+}
+
 main {
     display: grid;
     gap: 1rem;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 h1,
@@ -156,17 +165,21 @@ header {
 .intro,
 .contact {
     margin-inline: auto;
-    margin-block: 5rem;
+    margin-block: 2rem;
+    padding-inline: 1rem;
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: clamp(1rem, 1vw, 2rem);
     text-align: center;
-    max-width: 60vw;
+    max-width: 1400px;
 }
 
 .contact ul {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 
@@ -188,10 +201,17 @@ h2 {
 
 footer {
     text-align: center;
-    margin-top: -1rem;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
 }
 
 footer p {
+    padding-top: 0.4rem;
+    padding-inline: 0.4rem;
     border-radius: 5px 5px 0 0;
     background-color: #fff;
     display: inline-block;
